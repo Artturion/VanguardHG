@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request a healthcare service from Vanguard Health Group. We'll respond within one business day." />
+  <title>Request a Service | Vanguard Health Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">
+        <img src="brand_assets/Logo + Wordmark (Horizontal).svg" alt="Vanguard Health Group" class="logo-img" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="about.html"        class="nav-link">About Us</a></li>
+        <li><a href="services.html"     class="nav-link">Our Services</a></li>
+        <li><a href="industries.html"   class="nav-link">Industries</a></li>
+        <li><a href="work-with-us.html" class="nav-link">Work With Us</a></li>
+        <li><a href="request.html"      class="nav-cta active">Request a Service</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== PAGE HERO ========== -->
+    <div class="page-hero">
+      <div class="page-hero-content container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Request a Service</span>
+        </nav>
+        <h1>Request a Service</h1>
+        <p>Use our simple form to get started. Our team will review your request and contact you within one business day.</p>
+      </div>
+    </div>
+
+    <!-- ========== REQUEST FORM ========== -->
+    <section class="section request-section" aria-labelledby="request-heading">
+      <div class="container">
+        <div class="request-layout">
+
+          <!-- Info panel -->
+          <div class="request-info">
+            <span class="section-label">How It Works</span>
+            <h2 id="request-heading" class="section-heading">Simple. Fast. Reliable.</h2>
+            <p class="section-text">Fill in the form with your details and service requirements. Our team will review your request and get in touch promptly to discuss the best solution for your needs.</p>
+
+            <img
+              src="brand_assets/RequestaService_Simple fast reliable.jpeg"
+              alt="Vanguard Health Group service request"
+              class="split-img split-img--medium"
+              style="margin-bottom:1.5rem;"
+            />
+
+            <div class="request-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <p>A Vanguard Health Group representative will contact you within <strong>one business day</strong> to discuss your needs and next steps.</p>
+            </div>
+
+            <!-- Steps -->
+            <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="flex-shrink:0;width:2rem;height:2rem;background:var(--green-main);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.8rem;font-weight:800;">1</div>
+                <div>
+                  <strong style="font-size:.9rem;color:var(--gray-900);display:block;margin-bottom:.2rem;">Submit your request</strong>
+                  <span style="font-size:.84rem;color:var(--text-muted);">Fill in the form with your contact details and service requirements.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="flex-shrink:0;width:2rem;height:2rem;background:var(--green-main);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.8rem;font-weight:800;">2</div>
+                <div>
+                  <strong style="font-size:.9rem;color:var(--gray-900);display:block;margin-bottom:.2rem;">We review your request</strong>
+                  <span style="font-size:.84rem;color:var(--text-muted);">Our team reviews your request and identifies the best professionals for your needs.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <div style="flex-shrink:0;width:2rem;height:2rem;background:var(--green-main);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.8rem;font-weight:800;">3</div>
+                <div>
+                  <strong style="font-size:.9rem;color:var(--gray-900);display:block;margin-bottom:.2rem;">We get in touch</strong>
+                  <span style="font-size:.84rem;color:var(--text-muted);">Within one business day, a Vanguard representative will contact you to discuss next steps.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="form-card">
+            <form class="request-form" id="requestForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Your full name" />
+                </div>
+                <div class="form-group">
+                  <label for="orgName">Organisation Name</label>
+                  <input type="text" id="orgName" name="orgName" autocomplete="organization" placeholder="If applicable" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com" />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+61 4xx xxx xxx" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="serviceType">Service Required <span aria-hidden="true">*</span></label>
+                  <select id="serviceType" name="serviceType" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="nursing">Nursing</option>
+                    <option value="support-workers">Support Workers</option>
+                    <option value="allied-health">Allied Health</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="fundingType">Funding Type <span aria-hidden="true">*</span></label>
+                  <select id="fundingType" name="fundingType" required>
+                    <option value="" disabled selected>Select funding type</option>
+                    <option value="ndis">NDIS</option>
+                    <option value="support-at-home">Support at Home</option>
+                    <option value="private">Private</option>
+                    <option value="dva">DVA</option>
+                    <option value="tac">TAC</option>
+                    <option value="insurance">Insurance</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="location">Location / Service Area <span aria-hidden="true">*</span></label>
+                  <input type="text" id="location" name="location" required placeholder="e.g. Melbourne, VIC" />
+                </div>
+                <div class="form-group">
+                  <label for="startDate">Preferred Start Date</label>
+                  <input type="date" id="startDate" name="startDate" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="details">Additional Details / Specific Requirements</label>
+                <textarea id="details" name="details" rows="4" placeholder="Describe your specific needs, requirements, or any other relevant information..."></textarea>
+              </div>
+              <div class="form-group form-group--checkbox">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="consent" name="consent" required />
+                  <span class="checkbox-custom" aria-hidden="true"></span>
+                  <span>I consent to Vanguard Health Group collecting and using my personal information to process this service request in accordance with the <a href="#" class="form-link">Privacy Policy</a>. <span aria-hidden="true">*</span></span>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-secondary btn--full">
+                Submit Request
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p>Thank you! We'll be in touch within one business day.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-logo">
+          <img src="brand_assets/Logo + Wordmark (Horizontal).svg" alt="Vanguard Health Group" class="logo-img logo-img--white" width="140" height="16" />
+          <span class="footer-logo-sub">HEALTH GROUP Pty Ltd</span>
+        </a>
+        <p class="footer-tagline">Reliable Care. Trusted Professionals.</p>
+        <p class="footer-desc">Delivering high-quality, flexible workforce solutions across healthcare and community support in Australia.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="request.html">Request a Service</a></li>
+          <li><a href="work-with-us.html">Work With Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul role="list">
+          <li>Nursing Services</li>
+          <li>Aged Care Support</li>
+          <li>Disability Support</li>
+          <li>Allied Health</li>
+          <li>Hospital Staffing</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <address>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.96-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+            <a href="tel:+61000000000">+61 (0)00 000 0000</a>
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@vanguardhealthgroup.com.au">info@vanguardhealthgroup.com.au</a>
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Australia
+          </p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Vanguard Health Group Pty Ltd. All rights reserved.</p>
+        <p class="footer-legal">ABN: XX XXX XXX XXX &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
