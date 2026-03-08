@@ -15,33 +15,40 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ── Mobile nav toggle ───────────────────────────────────── */
+  /* ── Mobile drawer ───────────────────────────────────────── */
   const navToggle  = document.getElementById('navToggle');
-  const navLinksEl = document.getElementById('navLinks');
+  const navDrawer  = document.getElementById('navDrawer');
+  const drawerOverlay = document.getElementById('navDrawerOverlay');
+  const drawerClose   = document.getElementById('drawerClose');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinksEl.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function openDrawer() {
+    navDrawer.classList.add('open');
+    drawerOverlay.classList.add('open');
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    navDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  navToggle.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDrawer();
   });
 
-  navLinksEl.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinksEl.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!navbar.contains(e.target) && navLinksEl.classList.contains('open')) {
-      navLinksEl.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
+  navDrawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeDrawer);
   });
 
   /* ── Scroll-reveal animation ─────────────────────────────── */

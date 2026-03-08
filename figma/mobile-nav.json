@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "component": "Mobile Navigation",
+    "project": "Vanguard Health Group",
+    "breakpoint": "max-width: 900px",
+    "version": "1.0",
+    "notes": "Edit values in this file, return to developer to apply changes."
+  },
+
+  "tokens": {
+    "colors": {
+      "nav_background":        "#06200A",
+      "nav_background_opacity": 0.98,
+      "nav_link_default":      "rgba(255,255,255,0.85)",
+      "nav_link_hover_text":   "#ffffff",
+      "nav_link_hover_bg":     "rgba(255,255,255,0.10)",
+      "nav_link_active_text":  "#ffffff",
+      "nav_link_active_bg":    "rgba(255,255,255,0.10)",
+      "nav_cta_bg":            "#4fa42d",
+      "nav_cta_bg_hover":      "#006E0F",
+      "nav_cta_text":          "#ffffff",
+      "nav_border_top":        "rgba(255,255,255,0.08)",
+      "hamburger_lines":       "#ffffff",
+      "overlay_shadow":        "rgba(0,0,0,0.35)"
+    },
+    "typography": {
+      "nav_link_font_size":    "1.8rem",
+      "nav_link_font_weight":  500,
+      "nav_cta_font_size":     "1.8rem",
+      "nav_cta_font_weight":   600,
+      "font_family":           "Inter, system-ui, sans-serif"
+    },
+    "spacing": {
+      "nav_height":            "64px",
+      "menu_panel_padding":    "2rem",
+      "menu_item_gap":         "0.5rem",
+      "nav_link_padding_y":    "1.75rem",
+      "nav_link_padding_x":    "2rem",
+      "nav_cta_margin_top":    "0.5rem"
+    },
+    "sizing": {
+      "nav_cta_height":        "72px",
+      "logo_width":            "160px",
+      "hamburger_line_width":  "22px",
+      "hamburger_line_height": "2px",
+      "hamburger_line_gap":    "5px",
+      "hamburger_padding":     "0.5rem"
+    },
+    "border_radius": {
+      "nav_link":              "10px",
+      "nav_cta":               "100px",
+      "hamburger_button":      "4px"
+    },
+    "animation": {
+      "menu_open_transition":  "transform 0.3s ease, opacity 0.3s ease",
+      "hamburger_transition":  "all 0.25s ease",
+      "link_transition":       "color 0.25s ease, background 0.25s ease"
+    },
+    "elevation": {
+      "menu_panel_shadow":     "0 8px 24px rgba(0,0,0,0.35)"
+    }
+  },
+
+  "components": {
+    "navbar": {
+      "description": "Top bar — always visible, fixed position",
+      "height": "64px",
+      "background": "#06200A",
+      "layout": "space-between",
+      "padding_horizontal": "container (max 1200px, padding 0 1.25rem)",
+      "children": ["logo", "hamburger_button"]
+    },
+
+    "logo": {
+      "description": "SVG logo top-left",
+      "asset": "brand_assets/Logo-TopNav.svg",
+      "width": "160px",
+      "height": "auto"
+    },
+
+    "hamburger_button": {
+      "description": "3-line button, visible only on mobile",
+      "width": "22px",
+      "height": "22px",
+      "padding": "0.5rem",
+      "border_radius": "4px",
+      "background": "transparent",
+      "lines": {
+        "count": 3,
+        "width": "22px",
+        "height": "2px",
+        "color": "#ffffff",
+        "gap": "5px",
+        "border_radius": "2px"
+      },
+      "state_open": {
+        "line_1": "translateY(7px) rotate(45deg)",
+        "line_2": "opacity 0",
+        "line_3": "translateY(-7px) rotate(-45deg)"
+      }
+    },
+
+    "menu_panel": {
+      "description": "Dropdown panel, slides down from nav bar",
+      "position": "fixed",
+      "top": "64px",
+      "left": 0,
+      "right": 0,
+      "background": "#06200A",
+      "background_opacity": 0.98,
+      "padding": "2rem",
+      "border_top": "1px solid rgba(255,255,255,0.08)",
+      "box_shadow": "0 8px 24px rgba(0,0,0,0.35)",
+      "z_index": 999,
+      "layout": "column",
+      "gap": "0.5rem",
+      "state_closed": {
+        "transform": "translateY(-110%)",
+        "opacity": 0,
+        "pointer_events": "none"
+      },
+      "state_open": {
+        "transform": "translateY(0)",
+        "opacity": 1,
+        "pointer_events": "auto"
+      }
+    },
+
+    "nav_link": {
+      "description": "Standard navigation link item",
+      "padding": "1.75rem 2rem",
+      "font_size": "1.8rem",
+      "font_weight": 500,
+      "color_default": "rgba(255,255,255,0.85)",
+      "color_hover": "#ffffff",
+      "color_active": "#ffffff",
+      "background_default": "transparent",
+      "background_hover": "rgba(255,255,255,0.10)",
+      "background_active": "rgba(255,255,255,0.10)",
+      "border_radius": "10px",
+      "items": [
+        { "label": "About Us",        "href": "about.html" },
+        { "label": "Our Services",    "href": "services.html" },
+        { "label": "Industries",      "href": "industries.html" },
+        { "label": "Work With Us",    "href": "work-with-us.html" }
+      ]
+    },
+
+    "nav_cta": {
+      "description": "Primary CTA button at bottom of menu",
+      "label": "Request a Service",
+      "href": "request.html",
+      "height": "72px",
+      "font_size": "1.8rem",
+      "font_weight": 600,
+      "color": "#ffffff",
+      "background_default": "#4fa42d",
+      "background_hover": "#006E0F",
+      "border_radius": "100px",
+      "text_align": "center",
+      "margin_top": "0.5rem",
+      "box_shadow_hover": "0 4px 12px rgba(79,164,45,0.30)"
+    }
+  }
+}
