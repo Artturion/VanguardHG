@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vanguardhealthgroup.com.au/sitemap.xml
