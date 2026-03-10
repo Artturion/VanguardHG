@@ -1994,14 +1994,20 @@ input, select, textarea { font-family: inherit; }
   .work-layout   { grid-template-columns: 1fr; }
   .directors-grid { grid-template-columns: 1fr; }
 
-  /* ── Full-bleed: service images ───────────────────────── */
-  .service-image-wrap {
+  /* ── Full-bleed: service cards (overflow:hidden blocks child negative margins) */
+  .service-card {
     margin-inline: calc(-1 * clamp(1rem, 4vw, 2.5rem));
     border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .service-card .service-body {
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
   }
 
   /* ── Full-bleed: form cards ───────────────────────────── */
-  .form-card {
+  .form-card,
+  .benefits-card {
     margin-inline: calc(-1 * clamp(1rem, 4vw, 2.5rem));
     border-radius: 0;
     border-left: none;
